@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({
         <div className="grow hidden sm:flex flex-row justify-end">
           <ul className="flex flex-row">
             {links.map((link) => (
-              <li className="py-1 px-3">
+              <li key={link.uri} className="py-1 px-3">
                 <Link href={link.uri} target={link.newTab ? "_blank" : "_self"}>
                   {link.text}
                 </Link>

@@ -13,6 +13,7 @@ import {
   customHeadTags,
   navbar,
 } from "@/data/global";
+import Footer from "@/components/footer";
 
 export const viewport: Viewport = {
   themeColor: siteInfo.themeColor,
@@ -65,6 +66,7 @@ export default function RootLayout({
           loginButtonCollor={navbar.loginButtonCollor}
         />
         <main className="">{children}</main>
+        <Footer />
       </body>
     </html>
   );
