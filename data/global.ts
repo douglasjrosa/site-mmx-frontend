@@ -1,5 +1,6 @@
 import { NavbarProps } from "@/components/navbar";
 import { CustomHeadTagsProps } from "@/components/custom-head-tags";
+import { FooterProps } from "@/components/footer";
 
 export const baseUrl: string = process.env.NEXT_PUBLIC_BASE_URL as string;
 
@@ -102,16 +103,15 @@ export const navbar: NavbarProps = {
     },
   ],
   loginUrl: "https://crm.ribermax.com.br",
-  loginButtonCollor: "bg-lime-500"
+  loginButtonCollor: "bg-lime-500",
 };
 
-export const footer = {
+export const footer: FooterProps = {
   logo: {
-    name: "logomarca.png",
-    path: "site",
-    alternativeText: "Logomarca Maramax.",
-    width: 1000,
-    height: 750,
+    uri: "/images/site/logomarca.png",
+    alt: "Logomarca Maramax",
+    width: 771,
+    height: 324,
   },
   smallText: "© Copyright Maramax™ (Lei 9610 de 19/02/1998)",
   notificationBannerText:
@@ -123,17 +123,17 @@ export const footer = {
       links: [
         {
           newTab: false,
-          url: "/",
+          uri: "/",
           text: "Home",
         },
         {
           newTab: false,
-          url: "/produtos",
+          uri: "/produtos",
           text: "Produtos",
         },
         {
           newTab: false,
-          url: "/contato",
+          uri: "/contato",
           text: "Contato",
         },
       ],
@@ -143,66 +143,35 @@ export const footer = {
       links: [
         {
           newTab: false,
-          url: "tel:+5516988029535",
-          text: "(16) 98802-9535 Daniela (Comercial)",
+          uri: "tel:+5516988027089",
+          text: "(16) 98802-7089 Douglas (Comercial)",
         },
         {
           newTab: false,
-          url: "tel:+5516997968788",
-          text: "(16) 99796-8788 Lucas (Fábrica)",
-        },
-        {
-          newTab: false,
-          url: "mailto:contato.maramax@gmail.com",
+          uri: "mailto:contato.maramax@gmail.com",
           text: "contato.maramax@...",
         },
       ],
     },
     {
       title: "Localização",
-      descriptions: [
-        "Rua Dr. Francisco Gugliano, 347",
-        "Parque Industrial Tanquinho",
-        "Ribeirão Preto SP",
-      ],
+      descriptions: ["Rua Santos, 1624", "Vila Elisa", "Ribeirão Preto SP"],
     },
   ],
-};
-
-export const whatsapp = {
-  contacts: [
-    {
-      nome: "Daniela - Comercial",
-      fone: "+5516988029535",
-    },
-  ],
-
-  messsage: "Olá, visitei o site da Maramax e gostaria de mais informações...",
-  image: {
-    name: "logotipo_whatsapp_512x512.png",
-    path: "site",
-    alternativeText: "",
-    width: 512,
-    height: 512,
-    formats: {
-      thumbnail: {
-        name: "thumbnail_logotipo_whatsapp_512x512.png",
-        ext: ".png",
-        mime: "image/webp",
-        width: 156,
-        height: 156,
-        size: 22.49,
-        url: `${baseUrl}/images/site/thumbnail_logotipo_whatsapp_512x512.png`,
+  whatsapp: {
+    contacts: [
+      {
+        nome: "Daniela - Comercial",
+        fone: "+5516988029535",
       },
-      small: {
-        name: "small_logotipo_whatsapp_512x512.png",
-        ext: ".png",
-        mime: "image/png",
-        width: 500,
-        height: 500,
-        size: 133.73,
-        url: `${baseUrl}/images/site/small_logotipo_whatsapp_512x512.png`,
-      },
+    ],
+    messsage:
+      "Olá, visitei o site da Maramax e gostaria de mais informações...",
+    image: {
+      uri: "logotipo_whatsapp_512x512.png",
+      alt: "",
+      width: 512,
+      height: 512,
     },
   },
 };

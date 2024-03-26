@@ -32,17 +32,17 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav style={{ paddingBottom: height }}>
       <div
-        className={`fixed flex flex-row w-full p-2 shadow bg-yellow-300 ${bgColor}`}
-        style={{ height: height }}
+        className={`fixed flex flex-row w-full p-2 shadow-lg bg-yellow-300 ${bgColor}`}
+        style={{ height: height, zIndex: "999999" }}
       >
-        <div className="">
+        <Link href="/" title="home" className="shadow-lg rounded-full">
           <Image
             src={logo.uri}
             width={logo.width}
             height={logo.height}
             alt={logo.alt}
           />
-        </div>
+        </Link>
         <MobileMenuButton
           links={links}
           loginUrl={loginUrl}

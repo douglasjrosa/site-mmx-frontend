@@ -12,7 +12,16 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "mmx-wood": "url('/images/site/wood.webp')",
+        "mmx-panel": "url('/images/site/wood-pannel.webp')",
+        "mmx-forest": "url('/images/site/forest.webp')",
       },
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
   },
   plugins: [],

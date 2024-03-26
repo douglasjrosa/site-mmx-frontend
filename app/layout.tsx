@@ -12,6 +12,7 @@ import {
   baseUrl,
   customHeadTags,
   navbar,
+  footer,
 } from "@/data/global";
 import Footer from "@/components/footer";
 
@@ -66,7 +67,14 @@ export default function RootLayout({
           loginButtonCollor={navbar.loginButtonCollor}
         />
         <main className="">{children}</main>
-        <Footer />
+        <Footer
+          logo={footer.logo}
+            smallText={footer.smallText}
+            notificationBannerText={footer.notificationBannerText}
+            showInitModal={footer.showInitModal}
+            columns={footer.columns}
+            whatsapp={footer.whatsapp}
+        />
       </body>
     </html>
   );
