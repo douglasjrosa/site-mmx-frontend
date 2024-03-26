@@ -1,7 +1,8 @@
-import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+import CustomHeadTags from "@/components/custom-head-tags";
+import Navbar from "@/components/navbar";
+import type { Metadata, Viewport } from "next";
 import {
   siteInfo,
   robots,
@@ -9,6 +10,8 @@ import {
   openGraph,
   twitter,
   baseUrl,
+  customHeadTags,
+  navbar,
 } from "@/data/global";
 
 export const viewport: Viewport = {
@@ -36,6 +39,8 @@ export const metadata: Metadata = {
   twitter,
 };
 
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,14 +48,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <base href={baseUrl as string} />
-        <meta name="geo.placename" content="Ribeirão Preto-SP" />
-        <meta name="geo.position" content="-21.137191167625403; -47.78776210888562" />
-        <meta name="geo.region" content="SP-BR" />
-        <meta name="ICBM" content="-21.137191167625403, -47.78776210888562" />
-      </head>
-      <body className={inter.className}>{children}</body>
+      <CustomHeadTags
+        baseUrl={baseUrl}
+        geoPlacename={customHeadTags.geoPlacename}
+        geoPosition={customHeadTags.geoPosition}
+        geoRegion={customHeadTags.geoRegion}
+        icbm={customHeadTags.icbm}
+      />
+      <body className={inter.className}>
+        <Navbar
+          bgColor={navbar.bgColor}
+          height={navbar.height}
+          logo={navbar.logo}
+          links={navbar.links}
+          loginUrl={navbar.loginUrl}
+          loginButtonCollor={navbar.loginButtonCollor}
+        />
+        <main className="">{children}</main>
+      </body>
     </html>
   );
 }

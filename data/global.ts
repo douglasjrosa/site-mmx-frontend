@@ -1,7 +1,7 @@
-export const baseUrl: string | URL = process.env.NEXT_PUBLIC_BASE_URL as
-  | string
-  | URL;
+import { NavbarProps } from "@/components/navbar";
+import { CustomHeadTagsProps } from "@/components/custom-head-tags";
 
+export const baseUrl: string = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 export const siteInfo = {
   title: "Maramax",
@@ -11,9 +11,17 @@ export const siteInfo = {
   canonical: baseUrl,
 };
 
+export const customHeadTags: CustomHeadTagsProps = {
+  baseUrl,
+  geoPlacename: "Ribeirão Preto-SP",
+  geoPosition: "-21.137191167625403; -47.78776210888562",
+  geoRegion: "SP-BR",
+  icbm: "-21.137191167625403, -47.78776210888562",
+};
+
 export const twitter = {
   card: "summary_large_image",
-  creator: "@maramaxbrasil"
+  creator: "@maramaxbrasil",
 };
 
 export const robots = {
@@ -67,29 +75,34 @@ export const openGraph = {
   ],
 };
 
-export const navbar = {
+export const navbar: NavbarProps = {
+  bgColor: "bg-yellow-300",
+  height: "50px",
+  logo: {
+    uri: "/images/site/logotipo.png",
+    alt: "Logomarca Maramax",
+    width: 80,
+    height: 80,
+  },
   links: [
     {
       newTab: false,
-      url: "/",
+      uri: "/",
       text: "Home",
     },
     {
       newTab: false,
-      url: "/produtos",
+      uri: "/produtos",
       text: "Produtos",
     },
     {
       newTab: false,
-      url: "/contato",
+      uri: "/contato",
       text: "Contato",
     },
   ],
-  logo: {
-    name: "logotipo.png",
-    path: "site",
-    alternativeText: "Logomarca Maramax",
-  },
+  loginUrl: "https://crm.ribermax.com.br",
+  loginButtonCollor: "bg-lime-500"
 };
 
 export const footer = {
@@ -156,7 +169,7 @@ export const footer = {
   ],
 };
 
-export const whatsappInfo = {
+export const whatsapp = {
   contacts: [
     {
       nome: "Daniela - Comercial",

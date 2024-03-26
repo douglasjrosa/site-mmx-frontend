@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <div>CONTEÚDO AQUI</div>
-    </main>
+    <div>
+      <div style={{height: "1000px", backgroundColor: "cyan"}} >CONTEÚDO AQUI</div>
+    </div>
   );
 }
