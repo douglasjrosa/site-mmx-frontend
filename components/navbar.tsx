@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MobileMenuButton from "./mobile-menu";
 import LoginButton from "./login-button";
+import classNames from "classnames";
 
 export interface NavbarProps {
   bgColor: string;
@@ -32,8 +33,8 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav style={{ paddingBottom: height }}>
       <div
-        className={`fixed flex flex-row w-full p-2 shadow-lg bg-yellow-300 ${bgColor}`}
-        style={{ height: height, zIndex: "999999" }}
+        className="fixed flex flex-row w-full p-2 shadow-lg"
+        style={{ height: height, zIndex: "999999", backgroundColor: bgColor }}
       >
         <Link href="/" title="home" className="shadow-lg rounded-full">
           <Image

@@ -8,7 +8,9 @@ interface LoginButtonProps {
 const LoginButton: React.FC<LoginButtonProps> = ({ loginUrl, loginButtonCollor }) => {
   return (
     <Link href={loginUrl} target="_blank" >
-      <button className={`py-1 px-3 rounded text-white w-full ${loginButtonCollor}`}>
+      <button
+      style={{backgroundColor: loginButtonCollor }}
+      className="py-1 px-3 rounded text-white w-full" >
         Entrar
       </button>
     </Link>

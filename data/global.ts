@@ -77,7 +77,7 @@ export const openGraph = {
 };
 
 export const navbar: NavbarProps = {
-  bgColor: "bg-yellow-300",
+  bgColor: "rgb(253 224 71)",
   height: "50px",
   logo: {
     uri: "/images/site/logotipo.png",
@@ -103,7 +103,7 @@ export const navbar: NavbarProps = {
     },
   ],
   loginUrl: "https://crm.ribermax.com.br",
-  loginButtonCollor: "bg-lime-500",
+  loginButtonCollor: "rgb(132 204 22)",
 };
 
 export const footer: FooterProps = {
