@@ -161,17 +161,17 @@ export const footer: FooterProps = {
   whatsapp: {
     contacts: [
       {
-        nome: "Daniela - Comercial",
-        fone: "+5516988029535",
+        nome: "Douglas (Comercial)",
+        fone: "+5516988027089",
       },
     ],
-    messsage:
+    message:
       "Olá, visitei o site da Maramax e gostaria de mais informações...",
     image: {
-      uri: "logotipo_whatsapp_512x512.png",
-      alt: "",
-      width: 512,
-      height: 512,
+      uri: "/images/site/logotipo_whatsapp_90x90.webp",
+      alt: "Botão menu Whatsapp",
+      width: 90,
+      height: 90,
     },
   },
 };

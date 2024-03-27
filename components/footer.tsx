@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import WhatsappButton, { WhatsappButtonProps } from "./whatsapp-button";
 
 interface FooterLink {
   newTab: boolean;
@@ -13,10 +14,6 @@ interface FooterColumn {
   descriptions?: string[];
 }
 
-interface FooterWhatsappContact {
-  nome: string;
-  fone: string;
-}
 
 interface FooterImage {
   uri: string;
@@ -31,11 +28,7 @@ export interface FooterProps {
   notificationBannerText: string;
   showInitModal: boolean;
   columns: FooterColumn[];
-  whatsapp: {
-    contacts: FooterWhatsappContact[];
-    messsage: string;
-    image: FooterImage;
-  };
+  whatsapp: WhatsappButtonProps
 }
 
 const Footer: React.FC<FooterProps> = ({
@@ -104,6 +97,7 @@ const Footer: React.FC<FooterProps> = ({
       >
         <div className="container">{smallText}</div>
       </div>
+      <WhatsappButton contacts={whatsapp.contacts} message={whatsapp.message} image={whatsapp.image} />
     </footer>
   );
 };
