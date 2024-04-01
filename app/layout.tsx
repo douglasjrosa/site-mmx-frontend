@@ -40,8 +40,8 @@ export const metadata: Metadata = {
 	manifest: "/manifest.json",
 	robots,
 	icons,
-	openGraph,
 	twitter,
+	openGraph,
 };
 
 const inter = Inter({ subsets: ["latin"] });
