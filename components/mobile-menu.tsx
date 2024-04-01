@@ -12,13 +12,13 @@ interface MobileMenuButtonProps {
     text: string;
   }[];
   loginUrl: string;
-  loginButtonCollor: string;
+  mobileButtonColor: string;
 }
 
 const MobileMenuButton: React.FC<MobileMenuButtonProps> = ({
   links,
   loginUrl,
-  loginButtonCollor
+  mobileButtonColor
 }) => {
   const [mobileMenuIsShown, setMobileMenuIsShown] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,8 @@ const MobileMenuButton: React.FC<MobileMenuButtonProps> = ({
         onClick={() => {
           setMobileMenuIsShown(!mobileMenuIsShown);
         }}
-        className="h-full shadow-lg border border-yellow-400 rounded p-1"
+        className="h-full shadow-lg rounded p-1"
+		style={{backgroundColor: mobileButtonColor}}
       >
         <FiMenu
           style={{
@@ -64,7 +65,7 @@ const MobileMenuButton: React.FC<MobileMenuButtonProps> = ({
           </ul>
           <hr className="border-1 border-gray-400 my-2" />
           <div className="mt-4">
-            <LoginButton loginUrl={loginUrl} loginButtonCollor={loginButtonCollor} />
+            <LoginButton loginUrl={loginUrl} mobileButtonColor={mobileButtonColor} />
           </div>
         </div>
       )}

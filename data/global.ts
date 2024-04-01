@@ -1,8 +1,7 @@
 import { NavbarProps } from "@/components/navbar";
-import { CustomHeadTagsProps } from "@/components/custom-head-tags";
 import { FooterProps } from "@/components/footer";
 
-export const baseUrl: string = process.env.NEXT_PUBLIC_BASE_URL as string;
+export const baseUrl = "https://maramax.com.br";
 
 export const siteInfo = {
   title: "Maramax",
@@ -12,7 +11,7 @@ export const siteInfo = {
   canonical: baseUrl,
 };
 
-export const customHeadTags: CustomHeadTagsProps = {
+export const customHeadTags = {
   baseUrl,
   geoPlacename: "Ribeirão Preto-SP",
   geoPosition: "-21.137191167625403; -47.78776210888562",
@@ -103,7 +102,7 @@ export const navbar: NavbarProps = {
     },
   ],
   loginUrl: "https://crm.ribermax.com.br",
-  loginButtonCollor: "rgb(132 204 22)",
+  mobileButtonColor: "rgb(132 204 22)",
 };
 
 export const footer: FooterProps = {

@@ -19,7 +19,7 @@ export interface NavbarProps {
     text: string;
   }[];
   loginUrl: string;
-  loginButtonCollor: string;
+  mobileButtonColor: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -28,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({
   logo,
   links,
   loginUrl,
-  loginButtonCollor,
+  mobileButtonColor,
 }) => {
   return (
     <nav style={{ paddingBottom: height }}>
@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({
         <MobileMenuButton
           links={links}
           loginUrl={loginUrl}
-          loginButtonCollor={loginButtonCollor}
+          mobileButtonColor={mobileButtonColor}
         />
         <div className="grow hidden sm:flex flex-row justify-end">
           <ul className="flex flex-row">
@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="ml-3">
             <LoginButton
               loginUrl={loginUrl}
-              loginButtonCollor={loginButtonCollor}
+              mobileButtonColor={mobileButtonColor}
             />
           </div>
         </div>
