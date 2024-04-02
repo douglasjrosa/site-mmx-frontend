@@ -1,4 +1,5 @@
 import FeatureRowsGroup from "@/components/featured-rows-group";
+import ImageHeader from "@/components/image-header";
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
@@ -19,7 +20,7 @@ export default async function ({ params }: { params: { slug: string } }) {
 	const { post } = response;
 	return (
 		<div>
-			<div className="mt-10">{post.title}</div>
+			<ImageHeader image={post.imageHeader} title={post.title} />
 			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)

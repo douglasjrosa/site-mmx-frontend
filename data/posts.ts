@@ -26,6 +26,7 @@ interface PostExcerpt {
 
 export interface Post {
 	title: string;
+	imageHeader: Image;
 	metadata: PostMetadata;
 	excerpts: PostExcerpt[];
 }
@@ -37,6 +38,12 @@ interface PostCollection {
 export const posts: PostCollection = {
 	"madeira-entalhada-com-serenidade-e-elegancia": {
 		title: "Madeira entalhada com serenidade e elegância",
+		imageHeader: {
+			url: "/images/site/prancha.jpeg",
+			alt: "Tábua de café da manhã",
+			width: 1920,
+			height: 918
+		},
 		metadata: {
 			title: "Madeira entalhada com serenidade e elegância",
 			keywords: ["Madeira entalhada", "Produtos de madeira"],

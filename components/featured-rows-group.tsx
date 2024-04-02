@@ -25,7 +25,7 @@ const FeatureRowsGroup: React.FC<FeatureRowsGroupProps> = ({ excerpts }) => {
 				reverse = !reverse;
 				reverseClass = reverse ? "md:flex-row" : "md:flex-row-reverse";
 				return (
-					<div className={`bg-white md:rounded shadow-xl w-full lg:w-5/6 mx-auto my-10 md:flex ${reverseClass} justify-between`}>
+					<div key={`feature-row-${key}`} className={`bg-white md:rounded shadow-xl w-full lg:w-5/6 mx-auto my-10 md:flex ${reverseClass} justify-between`}>
 						<div className="md:w-1/2 lg:w-2/5 flex justify-center">
 							<Image className="w-full md:w-auto lg:rounded-l" src={image.url} alt={image.alt} height={image.height} width={image.width} />
 						</div>
