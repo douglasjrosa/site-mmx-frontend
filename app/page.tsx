@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   keywords: ["Madeira entalhada", "Produtos de madeira"],
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
-      <div style={{height: "1000px"}} className="bg-lime-400" >CONTEÚDO AQUI</div>
+      <div style={{height: "1000px"}} className="bg-lime-400 py-10 my-10" >
+		<Link href={"/madeira-entalhada-com-serenidade-e-elegancia"} >Madeira entalhada</Link>
+	  </div>
     </div>
   );
 }

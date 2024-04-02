@@ -48,7 +48,7 @@ export const posts: PostCollection = {
 			{
 				title: "Madeira entalhada com serenidade e elegância",
 				image: {
-					url: "/images/produtos/produtos-gallery/48.jpg",
+					url: "/images/produtos/produtos-gallery/64.jpg",
 					alt: "Tábua de frios e petiscos",
 					width: 433,
 					height: 433
@@ -60,7 +60,7 @@ export const posts: PostCollection = {
 			{
 				title: "Madeira entalhada com serenidade e elegância",
 				image: {
-					url: "/images/produtos/produtos-gallery/48.jpg",
+					url: "/images/produtos/produtos-gallery/51.jpg",
 					alt: "Tábua de frios e petiscos",
 					width: 433,
 					height: 433

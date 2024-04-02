@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({
 	whatsapp,
 }) => {
 	return (
-		<footer className="bg-mmx-panel bg-fixed bg-cover bg-top relative">
+		<footer className="border-t-2 border-yellow-900 bg-mmx-panel bg-fixed bg-cover bg-top relative">
 			{/* <LeadsForm />*/}
 			<div
 				id="main-footer"

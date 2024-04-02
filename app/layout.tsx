@@ -52,8 +52,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="pt-BR">
-			<body className={`${inter.className} text-gray-600`}>
+		<html lang="pt-BR" >
+			<body className={`${inter.className} text-gray-600 bg-mmx-wood bg-fixed bg-repeat relative`}>
 				<Navbar
 					bgColor={navbar.bgColor}
 					height={navbar.height}
