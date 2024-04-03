@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   publisher: "TI - Max Brasil",
 };
 
-export default async function () {
+export default async function Page() {
 
 	const response = await (await fetch(`http://localhost:3000/api/home`, { method: "GET" })).json();
 	const { post } = response;
