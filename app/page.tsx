@@ -2,6 +2,8 @@ import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
 import { apiUrl } from "@/data/global";
+import { notFound } from "next/navigation";
+import { getPost } from "@/lib/utils";
 
 export const metadata: Metadata = {
   keywords: ["Madeira entalhada", "Produtos de madeira"],
@@ -9,17 +11,9 @@ export const metadata: Metadata = {
   creator: "Grupo Max Brasil",
   publisher: "TI - Max Brasil",
 };
-console.log(process.env.NEXT_PUBLIC_API_URL);
-const getPost = async (slug: string) => {
-	let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${slug}`, { method: "GET" }).then((r) => r.json());
-	if (res.posts === undefined) return undefined;
-	const { posts } = res;
-	return posts;
-}
 
 export default async function Page() {
-	const response = await getPost("home");
-	const { post } = response;
+	const post = await getPost("home");
 	return (
 		<div>
 			<ImageHeader image={post.imageHeader} title={post.title} />

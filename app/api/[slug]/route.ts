@@ -6,6 +6,6 @@ export async function GET(
 	context: any
 ) {
 	const { slug } = context.params;
-	const post: Post = posts[slug];
+	const post: Post | undefined = posts[slug];
 	return NextResponse.json({ post })
 }

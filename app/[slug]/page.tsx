@@ -2,19 +2,13 @@ import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation'
-import { apiUrl } from "@/data/global";
+import { getPost } from "@/lib/utils";
 
 
-const getPost = async (slug: string) => {
-	let res = await fetch(`${apiUrl}/api/${slug}`, { method: "GET" }).then((r) => r.json());
-	if (res.posts === undefined) return undefined;
-	const { posts } = res;
-	return posts;
-}
 
 /*
 export async function generateStaticParams(): Promise<any> {
-	const posts = await getPost("posts");
+	const posts = await getPosts();
 	const slugs = posts.map((post: any) => (post.slug == "home" ? { slug: "" } : { slug: post.slug }));
 	return slugs;
 }
