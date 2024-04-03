@@ -1,7 +1,7 @@
 import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
-import { baseUrl } from "@/data/global";
+import { apiUrl } from "@/data/global";
 
 export const metadata: Metadata = {
   keywords: ["Madeira entalhada", "Produtos de madeira"],
@@ -11,20 +11,19 @@ export const metadata: Metadata = {
 };
 
 const getPost = async (slug: string) => {
-	let res = await fetch(`${baseUrl}/api/${slug}`, { method: "GET" }).then((r) => r.json());
+	let res = await fetch(`${apiUrl}/api/${slug}`, { method: "GET" }).then((r) => r.json());
 	if (res.posts === undefined) return undefined;
 	const { posts } = res;
 	return posts;
 }
 
 export default async function Page() {
-
-	//const response = await getPost("home");
-	//const { post } = response;
-	//<ImageHeader image={post.imageHeader} title={post.title} />
-	//<FeatureRowsGroup excerpts={post.excerpts} />
+	const response = await getPost("home");
+	const { post } = response;
 	return (
 		<div>
+			<ImageHeader image={post.imageHeader} title={post.title} />
+			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
 }
