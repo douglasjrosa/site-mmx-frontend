@@ -1,6 +1,7 @@
 import { baseUrl } from "@/data/global";
 
 export const getPost = async (slug: string) => {
+	"use server"
 	try {
 		let res = await fetch(`${baseUrl}/api/${slug}`, {
 			method: "GET",
@@ -17,6 +18,7 @@ export const getPost = async (slug: string) => {
 }
 
 export const getPosts = async () => {
+	"use server"
 	try {
 		let res = await fetch(`${baseUrl}/api/posts`, {
 			method: "GET",

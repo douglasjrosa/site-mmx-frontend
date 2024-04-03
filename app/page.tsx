@@ -1,3 +1,5 @@
+"use server"
+
 import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
