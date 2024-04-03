@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function Page({ params }: { params: { slug: string } }) {
 
 	const { slug } = params;
-	//const post = await getPost(slug);
+	const post = await getPost(slug);
 	//if (post === undefined) notFound();
 
 	//<ImageHeader image={post.imageHeader} title={post.title} />
