@@ -7,6 +7,7 @@ export async function GET(
 ) {
 
 	const { slug } = context.params;
-	const post: Post | undefined = posts[slug];
-	return NextResponse.json({ post })
+	//const post: Post | undefined = posts[slug];
+	//return NextResponse.json({ post })
+	return NextResponse.json({ slug });
 }
