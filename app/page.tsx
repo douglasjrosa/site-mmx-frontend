@@ -10,9 +10,16 @@ export const metadata: Metadata = {
   publisher: "TI - Max Brasil",
 };
 
+const getPost = async (slug: string) => {
+	let res = await fetch(`${baseUrl}/api/${slug}`, { method: "GET" }).then((r) => r.json());
+	if (res.posts === undefined) return undefined;
+	const { posts } = res;
+	return posts;
+}
+
 export default async function Page() {
 
-	const response = await (await fetch(`${baseUrl}/api/home`, { method: "GET" })).json();
+	const response = await getPost("home");
 	const { post } = response;
 	return (
 		<div>
