@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 */
 export default async function Page() {
-	/*
+
 	const post = await getPost("home");
 	return (
 		<div>
@@ -21,6 +21,4 @@ export default async function Page() {
 			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
-	*/
-	return <>{baseUrl}</>
 }

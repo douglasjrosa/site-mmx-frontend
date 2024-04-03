@@ -3,7 +3,6 @@ import ImageHeader from "@/components/image-header";
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation'
 import { getPost } from "@/lib/utils";
-import { baseUrl } from "@/data/global";
 
 
 
@@ -23,7 +22,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 */
 
 export default async function Page({ params }: { params: { slug: string } }) {
-/*
 	const { slug } = params;
 	const post = await getPost(slug);
 	if (post === undefined) notFound();
@@ -34,5 +32,4 @@ export default async function Page({ params }: { params: { slug: string } }) {
 			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
-	*/ return <>{baseUrl}</>
 }
