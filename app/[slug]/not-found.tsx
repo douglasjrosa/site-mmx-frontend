@@ -1,6 +1,6 @@
 import FeatureRowsGroup from "@/components/featured-rows-group";
 
-export default function () {
+export default function NotFound() {
 	const excerpts = [
 		{
 			title: "Ooops!",
