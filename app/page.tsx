@@ -2,6 +2,7 @@ import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
 import { getPost } from "@/lib/utils";
+import { baseUrl } from "@/data/global";
 /*
 export const metadata: Metadata = {
   keywords: ["Madeira entalhada", "Produtos de madeira"],
@@ -11,9 +12,26 @@ export const metadata: Metadata = {
 };
 */
 export default async function Page() {
-	const post = await getPost("home");
-
+	try {
+		let res = await fetch(`${baseUrl}/api/home`, {
+			method: "GET",
+			headers: {
+				'Accept': 'application/json'
+			}
+		}).then((data) => data.json());
+		if (res.post === undefined) return undefined;
+		const { post } = res;
+		return (
+			<>
+				<p className="mt-10">{post.title}</p>
+				<p>{post.metadata.title}</p>
+			</>
+		);
+	} catch (error) {
+		console.error('Erro ao fazer a solicitação:', error);
+	}
 	/*
+	const post = await getPost("home");
 	return (
 		<div>
 			<ImageHeader image={post.imageHeader} title={post.title} />
@@ -21,10 +39,4 @@ export default async function Page() {
 		</div>
 	)
 	*/
-	return (
-		<>
-			<p className="mt-10">{post.title}</p>
-			<p>{post.metadata.title}</p>
-		</>
-	);
 }
