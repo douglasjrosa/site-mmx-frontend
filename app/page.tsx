@@ -14,10 +14,13 @@ export const metadata: Metadata = {
 */
 export default async function Page() {
 	const post = await getPost("home");
+
+	/*
 	return (
 		<div>
 			<ImageHeader image={post.imageHeader} title={post.title} />
 			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
+	*/<>{console.log(post)}</>
 }
