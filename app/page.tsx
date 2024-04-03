@@ -4,15 +4,16 @@ import type { Metadata } from "next";
 import { apiUrl } from "@/data/global";
 import { notFound } from "next/navigation";
 import { getPost } from "@/lib/utils";
-
+/*
 export const metadata: Metadata = {
   keywords: ["Madeira entalhada", "Produtos de madeira"],
   authors: [{ name: "Douglas José Rosa", url: "https://github.com/douglasjrosa" }],
   creator: "Grupo Max Brasil",
   publisher: "TI - Max Brasil",
 };
-
+*/
 export default async function Page() {
+	/*
 	const post = await getPost("home");
 	return (
 		<div>
@@ -20,4 +21,6 @@ export default async function Page() {
 			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
+	*/
+	return <>{apiUrl}</>
 }
