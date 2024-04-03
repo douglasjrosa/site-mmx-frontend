@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 		"geo.position": customHeadTags.geoPosition,
 		"geo.region": customHeadTags.geoRegion,
 	},
-	manifest: "/manifest.json",
+	manifest: `${baseUrl}/manifest.json`,
 	robots,
 	icons,
 	twitter,
