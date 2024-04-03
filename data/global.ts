@@ -85,7 +85,7 @@ export interface OpenGraph {
 	images: Image[];
 }
 
-export const baseUrl = "https://maramax.com.br";
+export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const siteInfo = {
 	title: "Maramax",

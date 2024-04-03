@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 		template: `%s - ${siteInfo.title}`,
 	},
 	description: siteInfo.description,
-	metadataBase: new URL(baseUrl),
+	metadataBase: new URL(baseUrl as string),
 	alternates: {
 		canonical: "/produtos",
 	},
