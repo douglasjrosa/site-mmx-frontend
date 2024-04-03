@@ -12,24 +12,20 @@ export const metadata: Metadata = {
 };
 */
 export default async function Page() {
-	try {
-		let res = await fetch(`${baseUrl}/api/home`, {
-			method: "GET",
-			headers: {
-				'Accept': 'application/json'
-			}
-		}).then((data) => data.json());
-		if (res.post === undefined) return undefined;
-		const { post } = res;
-		return (
-			<>
-				<p className="mt-10">{post.title}</p>
-				<p>{post.metadata.title}</p>
-			</>
-		);
-	} catch (error) {
-		console.error('Erro ao fazer a solicitação:', error);
-	}
+	const res = await fetch(`${baseUrl}/api/home`, {
+		method: "GET",
+		headers: {
+			'Accept': 'application/json'
+		}
+	}).then((data) => data.json());
+	if (res.post === undefined) return undefined;
+	const { post } = res;
+	return (
+		<>
+			<p className="mt-10">{post.title}</p>
+			<p>{post.metadata.title}</p>
+		</>
+	);
 	/*
 	const post = await getPost("home");
 	return (
