@@ -1,11 +1,12 @@
 import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from 'next';
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { baseUrl } from "@/data/global";
  
 
 const getPost = async (slug: string) => {
-	let res = await fetch(`http://localhost:3000/api/${slug}`, { method: "GET" }).then((r) => r.json());
+	let res = await fetch(`${baseUrl}/api/${slug}`, { method: "GET" }).then((r) => r.json());
 	if(res.posts === undefined) return undefined;
 	const { posts } = res;
 	return posts;
