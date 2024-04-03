@@ -1,5 +1,6 @@
+import FeatureRowsGroup from "@/components/featured-rows-group";
+import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   keywords: ["Madeira entalhada", "Produtos de madeira"],
@@ -8,12 +9,14 @@ export const metadata: Metadata = {
   publisher: "TI - Max Brasil",
 };
 
-export default function Home() {
-  return (
-    <div>
-      <div style={{height: "1000px"}} className="bg-lime-400 py-10 my-10" >
-		<Link href={"/madeira-entalhada-com-serenidade-e-elegancia"} >Madeira entalhada</Link>
-	  </div>
-    </div>
-  );
+export default async function () {
+
+	const response = await (await fetch(`http://localhost:3000/api/home`, { method: "GET" })).json();
+	const { post } = response;
+	return (
+		<div>
+			<ImageHeader image={post.imageHeader} title={post.title} />
+			<FeatureRowsGroup excerpts={post.excerpts} />
+		</div>
+	)
 }
