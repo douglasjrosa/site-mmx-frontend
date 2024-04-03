@@ -34,10 +34,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	const post = await getPost(slug);
 	if (post === undefined) notFound();
 
+	//<ImageHeader image={post.imageHeader} title={post.title} />
+	//<FeatureRowsGroup excerpts={post.excerpts} />
 	return (
 		<div>
-			<ImageHeader image={post.imageHeader} title={post.title} />
-			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
 }
