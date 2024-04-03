@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   creator: "Grupo Max Brasil",
   publisher: "TI - Max Brasil",
 };
-
+console.log(process.env.NEXT_PUBLIC_API_URL);
 const getPost = async (slug: string) => {
-	let res = await fetch(`${apiUrl}/api/${slug}`, { method: "GET" }).then((r) => r.json());
+	let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${slug}`, { method: "GET" }).then((r) => r.json());
 	if (res.posts === undefined) return undefined;
 	const { posts } = res;
 	return posts;
