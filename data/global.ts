@@ -85,7 +85,7 @@ export interface OpenGraph {
 	images: Image[];
 }
 
-export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+export const baseUrl : string = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 export const siteInfo = {
 	title: "Maramax",
