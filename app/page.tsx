@@ -3,6 +3,8 @@ import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
 import { getPost } from "@/lib/utils";
 import { baseUrl } from "@/data/global";
+import { Suspense } from "react";
+
 /*
 export const metadata: Metadata = {
   keywords: ["Madeira entalhada", "Produtos de madeira"],
@@ -22,8 +24,11 @@ export default async function Page() {
 	const { post } = res;
 	return (
 		<>
+		<Suspense fallback={<h1>Carregando...</h1>} >
+
 			<p className="mt-10">{post.title}</p>
 			<p>{post.metadata.title}</p>
+		</Suspense>
 		</>
 	);
 	/*
