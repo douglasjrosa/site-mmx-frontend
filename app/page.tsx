@@ -1,5 +1,3 @@
-"use server"
-
 import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
@@ -22,5 +20,11 @@ export default async function Page() {
 			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
-	*/<>{console.log(post)}</>
+	*/
+	return (
+		<>
+			<p className="mt-10">{post.title}</p>
+			<p>{post.metadata.title}</p>
+		</>
+	);
 }
