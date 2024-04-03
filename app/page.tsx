@@ -19,12 +19,12 @@ const getPost = async (slug: string) => {
 
 export default async function Page() {
 
-	const response = await getPost("home");
-	const { post } = response;
+	//const response = await getPost("home");
+	//const { post } = response;
+	//<ImageHeader image={post.imageHeader} title={post.title} />
+	//<FeatureRowsGroup excerpts={post.excerpts} />
 	return (
 		<div>
-			<ImageHeader image={post.imageHeader} title={post.title} />
-			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
 }
