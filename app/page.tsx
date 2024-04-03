@@ -14,25 +14,16 @@ export const metadata: Metadata = {
 };
 */
 export default async function Page() {
-	const res = await fetch(`${baseUrl}/api/home`, {
-		method: "GET",
-		headers: {
-			'Accept': 'application/json'
-		}
-	}).then((data) => data.json());
-	if (res.post === undefined) return undefined;
-	const { post } = res;
+	const post = await getPost("home");
 	return (
 		<>
-		<Suspense fallback={<h1>Carregando...</h1>} >
-
-			<p className="mt-10">{post.title}</p>
-			<p>{post.metadata.title}</p>
-		</Suspense>
+			<Suspense fallback={<h1>Carregando...</h1>} >
+				<p className="mt-10">{post.title}</p>
+				<p>{post.metadata.title}</p>
+			</Suspense>
 		</>
 	);
 	/*
-	const post = await getPost("home");
 	return (
 		<div>
 			<ImageHeader image={post.imageHeader} title={post.title} />
