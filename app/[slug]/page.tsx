@@ -7,7 +7,7 @@ import { baseUrl } from "@/data/global";
 
 const getPost = async (slug: string) => {
 	let res = await fetch(`${baseUrl}/api/${slug}`, { method: "GET" }).then((r) => r.json());
-	if (res.posts === undefined) return undefined;
+	//if (res.posts === undefined) return undefined;
 	const { posts } = res;
 	return posts;
 }
@@ -31,13 +31,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function Page({ params }: { params: { slug: string } }) {
 
 	const { slug } = params;
-	const post = await getPost(slug);
-	if (post === undefined) notFound();
+	//const post = await getPost(slug);
+	//if (post === undefined) notFound();
 
 	//<ImageHeader image={post.imageHeader} title={post.title} />
 	//<FeatureRowsGroup excerpts={post.excerpts} />
 	return (
-		<div>
+		<div>{slug}
 		</div>
 	)
 }
