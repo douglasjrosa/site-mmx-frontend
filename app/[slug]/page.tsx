@@ -3,7 +3,7 @@ import ImageHeader from "@/components/image-header";
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation'
 import { getPost } from "@/lib/utils";
-import { apiUrl } from "@/data/global";
+import { baseUrl } from "@/data/global";
 
 
 
@@ -34,5 +34,5 @@ export default async function Page({ params }: { params: { slug: string } }) {
 			<FeatureRowsGroup excerpts={post.excerpts} />
 		</div>
 	)
-	*/ return <>{apiUrl}</>
+	*/ return <>{baseUrl}</>
 }
