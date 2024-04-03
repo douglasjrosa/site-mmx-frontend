@@ -12,11 +12,13 @@ const getPost = async (slug: string) => {
 	return posts;
 }
 
+/*
 export async function generateStaticParams(): Promise<any> {
 	const posts = await getPost("posts");
 	const slugs = posts.map((post: any) => (post.slug == "home" ? { slug: "" } : { slug: post.slug }));
 	return slugs;
 }
+*/
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
 
