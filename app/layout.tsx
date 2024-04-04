@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 	description: siteInfo.description,
 	metadataBase: new URL(baseUrl as string),
 	alternates: {
-		canonical: "/produtos",
+		canonical: `${baseUrl}/produtos`,
 	},
 	other: {
 		rating: "General",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 		"geo.position": customHeadTags.geoPosition,
 		"geo.region": customHeadTags.geoRegion,
 	},
-	manifest: "/manifest.json",
+	manifest: `${baseUrl}/manifest.json`,
 	robots,
 	icons,
 	twitter,

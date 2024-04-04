@@ -2,7 +2,6 @@ import FeatureRowsGroup from "@/components/featured-rows-group";
 import ImageHeader from "@/components/image-header";
 import type { Metadata } from "next";
 import { getPost } from "@/lib/utils";
-import { baseUrl } from "@/data/global";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

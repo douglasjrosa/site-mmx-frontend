@@ -4,13 +4,12 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation'
 import { getPost, getPosts } from "@/lib/utils";
 import { Suspense } from "react";
-/*
+
 export async function generateStaticParams(): Promise<any> {
 	const posts = await getPosts();
-	const slugs = posts.map((post: any) => (post.slug == "home" ? { slug: "" } : { slug: post.slug }));
-	return slugs;
+	return posts.map((post: any) => (post.slug == "home" ? { slug: "/" } : { slug: post.slug }));
 }
-*/
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
 
 	const { slug } = params;
