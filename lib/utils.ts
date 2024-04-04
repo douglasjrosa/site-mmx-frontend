@@ -5,7 +5,7 @@ export const getPost = async (slug: string) => {
 		let res = await fetch(`${baseUrl}/api/${slug}`, {
 			method: "GET",
 			headers: {
-				'Accept': 'application/json'
+				'Content-Type': 'application/json'
 			}
 		}).then((data) => data.json());
 		if (res.post === undefined) return undefined;
@@ -21,7 +21,7 @@ export const getPosts = async () => {
 		let res = await fetch(`${baseUrl}/api/posts`, {
 			method: "GET",
 			headers: {
-				'Accept': 'application/json'
+				'Content-Type': 'application/json'
 			}
 		}).then((data) => data.json());
 		if (res.posts === undefined) return undefined;

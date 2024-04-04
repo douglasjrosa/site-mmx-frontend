@@ -85,10 +85,7 @@ export interface OpenGraph {
 	images: Image[];
 }
 
-const isVercel = process.env.VERCEL_ENV === "production";
-const vercelUrl = process.env.NEXT_PUBLIC_VERCEL_URL;
-export const baseUrl: string = isVercel && vercelUrl
-	? `https://www.${vercelUrl}` : process.env.NEXT_PUBLIC_BASE_URL as string;
+export const baseUrl: string = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 export const siteInfo = {
 	title: "Maramax",
