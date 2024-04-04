@@ -10,6 +10,7 @@ export async function generateStaticParams(): Promise<any> {
 	const slugs = posts.map((post: any) => (post.slug == "home" ? { slug: "" } : { slug: post.slug }));
 	return slugs;
 }
+*/
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
 
 	const { slug } = params;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	if (post === undefined) notFound();
 	return post.metadata;
 }
-*/
+
 export default async function Page({ params }: { params: { slug: string } }) {
 
 	const { slug } = params;
