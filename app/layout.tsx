@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 	description: siteInfo.description,
 	metadataBase: new URL(baseUrl as string),
 	alternates: {
-		canonical: `${baseUrl}/produtos`,
+		canonical: `${baseUrl}`,
 	},
 	other: {
 		rating: "General",
