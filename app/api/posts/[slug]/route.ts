@@ -7,7 +7,8 @@ export async function GET(
 	request: NextRequest,
 	context: any
 ) {
-	const post = await db.select().from(pages);
+	const { slug } = context.params;
+	const post = await db.select().from(pages).where(eq(slug, pages.slug));
 	return NextResponse.json({ post })
 }
 
@@ -15,6 +16,7 @@ export async function POST(
 	request: NextRequest,
 	context: any
 ) {
+	const { slug } = context.params;
 	const post = await db.select().from(pages).where(eq(slug, pages.slug));
 	return NextResponse.json({ post })
 }

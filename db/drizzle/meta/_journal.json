@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1712343708773,
+      "tag": "0000_many_raider",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1712347309005,
+      "tag": "0001_petite_ricochet",
+      "breakpoints": true
+    }
+  ]
+}
