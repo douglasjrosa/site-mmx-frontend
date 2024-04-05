@@ -15,6 +15,20 @@
       "when": 1712347309005,
       "tag": "0001_petite_ricochet",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1712350709997,
+      "tag": "0002_overjoyed_sleeper",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1712353786819,
+      "tag": "0003_high_morgan_stark",
+      "breakpoints": true
     }
   ]
 }
