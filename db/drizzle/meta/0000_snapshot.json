@@ -1,5 +1,5 @@
 {
-  "id": "ce3cd1ad-6fb4-45c8-bf01-2852167ad25b",
+  "id": "94268a8f-8b03-47de-88e2-f625f8bad1bd",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -55,15 +55,21 @@
           "notNull": false,
           "default": false
         },
+        "slug": {
+          "name": "slug",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true
+        },
         "title": {
           "name": "title",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": false
         },
-        "image": {
-          "name": "image",
-          "type": "json",
+        "imageHeader": {
+          "name": "imageHeader",
+          "type": "jsonb",
           "primaryKey": false,
           "notNull": false
         },
@@ -78,9 +84,24 @@
           "type": "jsonb",
           "primaryKey": false,
           "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
         }
       },
-      "indexes": {},
+      "indexes": {
+        "unique_idx": {
+          "name": "unique_idx",
+          "columns": [
+            "slug"
+          ],
+          "isUnique": true
+        }
+      },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}

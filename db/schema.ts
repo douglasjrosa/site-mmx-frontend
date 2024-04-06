@@ -19,12 +19,12 @@ export const pages = pgTable("pages", {
 	isPage: boolean("isPage").default(false),
 	slug: varchar("slug", { length: 256 }).notNull(),
 	title: varchar("title", { length: 256 }),
-	image: json("image"),
+	imageHeader: json("imageHeader"),
 	metadata: jsonb("metadata"),
 	excerpts: jsonb("excerpts"),
     createdAt: timestamp('createdAt').defaultNow().notNull(),
 },
-	(pages) => ({ uniqueIdx: uniqueIndex("unique_idx").on(pages.slug) })
+	(pages) => ({ uniqueIdx: uniqueIndex("unique_slug").on(pages.slug) })
 );
 
 export type Page = InferSelectModel<typeof pages>;

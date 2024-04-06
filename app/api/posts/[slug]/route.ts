@@ -1,13 +1,13 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { db } from "@/db";
 import { Page, pages } from '@/db/schema';
 import { eq } from 'drizzle-orm';
 
 export async function GET(
-	context: any
+	request: NextRequest,
+	{params}: any
 ) {
-	const { slug } = context.params;
-
+	const { slug } = params;
 	const post: Page[] = await db.select().from(pages).where(eq(pages.slug, slug));
-	return NextResponse.json({ post })
+	return NextResponse.json( post[0] )
 }

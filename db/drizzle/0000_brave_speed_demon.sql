@@ -8,8 +8,12 @@ CREATE TABLE IF NOT EXISTS "globals" (
 CREATE TABLE IF NOT EXISTS "pages" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"isPage" boolean DEFAULT false,
+	"slug" varchar(256) NOT NULL,
 	"title" varchar(256),
-	"image" json,
+	"imageHeader" jsonb,
 	"metadata" jsonb,
-	"excerpts" jsonb
+	"excerpts" jsonb,
+	"createdAt" timestamp DEFAULT now() NOT NULL
 );
+--> statement-breakpoint
+CREATE UNIQUE INDEX IF NOT EXISTS "unique_idx" ON "pages" ("slug");

@@ -1,6 +1,6 @@
 {
-  "id": "2f072303-336e-48fb-81ce-7addde663b84",
-  "prevId": "ce3cd1ad-6fb4-45c8-bf01-2852167ad25b",
+  "id": "fdb026b2-f6b1-4f30-a37e-de4ed0ea1af2",
+  "prevId": "94268a8f-8b03-47de-88e2-f625f8bad1bd",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -59,7 +59,7 @@
           "name": "slug",
           "type": "varchar(256)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "title": {
           "name": "title",
@@ -67,8 +67,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "image": {
-          "name": "image",
+        "imageHeader": {
+          "name": "imageHeader",
           "type": "json",
           "primaryKey": false,
           "notNull": false
@@ -84,9 +84,24 @@
           "type": "jsonb",
           "primaryKey": false,
           "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
         }
       },
-      "indexes": {},
+      "indexes": {
+        "unique_idx": {
+          "name": "unique_idx",
+          "columns": [
+            "slug"
+          ],
+          "isUnique": true
+        }
+      },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}

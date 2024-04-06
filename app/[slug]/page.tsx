@@ -24,11 +24,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	const post = await getPost(slug);
 	if (post === undefined) notFound();
 
+	const { imageHeader, excerpts } = post;
 	return (
 		<div>
 			<Suspense fallback={<h1>Carregando...</h1>} >
-				<ImageHeader image={post.imageHeader} title={post.title} />
-				<FeatureRowsGroup excerpts={post.excerpts} />
+				{imageHeader && <ImageHeader image={ imageHeader.image } title={ imageHeader.title } />}
+				{excerpts && <FeatureRowsGroup excerpts={ excerpts } />}
 			</Suspense>
 		</div>
 	);
