@@ -14,6 +14,8 @@ import {
 	footer,
 } from "@/data/global";
 import Footer from "@/components/footer";
+import { cookies } from "next/headers";
+import { CookiesPolicyWarning } from "@/components/cookies-policy-warning";
 
 export const viewport: Viewport = {
 	themeColor: siteInfo.themeColor,
@@ -51,6 +53,8 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const cookieStore = cookies();
+	const cookiesAllowed =  cookieStore.has("cookiesAllowed");
 	return (
 		<html lang="pt-BR" >
 			<body className={`${inter.className} text-gray-600 bg-mmx-wood bg-fixed bg-repeat relative`}>
@@ -71,6 +75,7 @@ export default function RootLayout({
 					columns={footer.columns}
 					whatsapp={footer.whatsapp}
 				/>
+				{!cookiesAllowed && <CookiesPolicyWarning />}
 			</body>
 		</html>
 	);

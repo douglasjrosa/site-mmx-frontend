@@ -17,8 +17,8 @@ export default async function Page() {
 	return (
 		<div>
 			<Suspense fallback={<h1>Carregando...</h1>} >
-				<ImageHeader image={ imageHeader.image } title={ imageHeader.title } />
-				<FeatureRowsGroup excerpts={ excerpts } />
+				<ImageHeader image={imageHeader.image} title={imageHeader.title} />
+				<FeatureRowsGroup excerpts={excerpts} />
 			</Suspense>
 		</div>
 	)
