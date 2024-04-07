@@ -32,10 +32,13 @@ const FeatureRowsGroup: React.FC<FeatureRowsGroupProps> = ({ excerpts }) => {
 							<div className="text-xl leading-9 text-justify mt-5">
 								<ReactMarkdown
 									components={{
-										a: ({ children, href }) => (
-											<a href={href} className="text-blue-500" target="_blank" rel="noopener noreferrer">{children}</a>
-										),
-										p: ({children}) => (
+										a: ({ children, href }) => {
+											const fixedHref = String(href).replace("/=/", ":");
+											return (
+												<a href={fixedHref} className="text-blue-500" rel="noopener noreferrer">{children}</a>
+											)
+										},
+										p: ({ children }) => (
 											<p className="mb-4" >{children}</p>
 										)
 									}}

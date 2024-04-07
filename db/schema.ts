@@ -6,10 +6,11 @@ import { InferInsertModel, InferSelectModel, } from "drizzle-orm";
 
 export const globals = pgTable("globals", {
 	id: serial("id").primaryKey(),
-	index: varchar("index", { length: 256 }),
-	prop: varchar("prop", { length: 256 }),
+	prop: varchar("prop", { length: 256 }).notNull(),
 	value: jsonb("value")
-});
+},
+	(globals) => ({ uniqueIdx: uniqueIndex("unique_prop").on(globals.prop) })
+);
 
 export type Global = InferSelectModel<typeof globals>;
 export type NewGlobal = InferInsertModel<typeof globals>;

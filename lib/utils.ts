@@ -1,5 +1,6 @@
-import { baseUrl } from "@/data/global";
 import { Page } from "@/db/schema";
+
+const baseUrl: string = process.env.NEXT_PUBLIC_BASE_URL ?? "";
 
 export const getPost = async (slug: string): Promise<Page | any> => {
 	try {
@@ -26,5 +27,19 @@ export const getPosts = async (): Promise<Page[]> => {
 	} catch (error) {
 		console.error('Erro ao fazer a solicitação:', error);
 		return [];
+	}
+}
+
+export const getGlobal = async (prop: string): Promise<Global | any> => {
+	try {
+		const response = await fetch(`${baseUrl}/api/globals/${prop}`);
+		if (!response.ok) {
+			throw new Error('Erro ao obter os dados');
+		}
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error('Erro ao fazer a solicitação:', error);
+		return {};
 	}
 }

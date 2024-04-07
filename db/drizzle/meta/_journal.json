@@ -22,6 +22,20 @@
       "when": 1712410731543,
       "tag": "0002_broken_revanche",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1712455275932,
+      "tag": "0003_confused_red_shift",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1712455343998,
+      "tag": "0004_mean_kinsey_walden",
+      "breakpoints": true
     }
   ]
 }

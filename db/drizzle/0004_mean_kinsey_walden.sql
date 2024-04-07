@@ -1,0 +1,1 @@
+ALTER TABLE "globals" ALTER COLUMN "prop" SET NOT NULL;
