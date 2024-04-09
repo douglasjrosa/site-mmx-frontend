@@ -16,6 +16,7 @@ import {
 import Footer from "@/components/footer";
 import { cookies } from "next/headers";
 import { CookiesPolicyWarning } from "@/components/cookies-policy-warning";
+import LeadsForm from "@/components/leads-form";
 
 export const viewport: Viewport = {
 	themeColor: siteInfo.themeColor,
@@ -67,6 +68,7 @@ export default function RootLayout({
 					mobileButtonColor={navbar.mobileButtonColor}
 				/>
 				<main className="">{children}</main>
+				<LeadsForm />
 				<Footer
 					logo={footer.logo}
 					smallText={footer.smallText}

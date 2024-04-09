@@ -1,4 +1,6 @@
+"use server"
 import { Page } from "@/db/schema";
+import { revalidatePath } from "next/cache";
 
 const baseUrl: string = process.env.NEXT_PUBLIC_BASE_URL ?? "";
 
@@ -31,6 +33,20 @@ export const getPosts = async (): Promise<Page[]> => {
 }
 
 export const getGlobal = async (prop: string): Promise<Global | any> => {
+	try {
+		const response = await fetch(`${baseUrl}/api/globals/${prop}`);
+		if (!response.ok) {
+			throw new Error('Erro ao obter os dados');
+		}
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error('Erro ao fazer a solicitação:', error);
+		return {};
+	}
+}
+
+export const saveLead = async (prop: string): Promise<Global | any> => {
 	try {
 		const response = await fetch(`${baseUrl}/api/globals/${prop}`);
 		if (!response.ok) {

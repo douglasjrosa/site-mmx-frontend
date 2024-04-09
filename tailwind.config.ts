@@ -15,6 +15,7 @@ const config: Config = {
         "mmx-wood": "url('/images/site/wood.webp')",
         "mmx-panel": "url('/images/site/wood-pannel.webp')",
         "mmx-forest": "url('/images/site/forest.webp')",
+        "mmx-leafs": "url('/images/site/green-wallpaper.webp')",
       },
     },
     screens: {
