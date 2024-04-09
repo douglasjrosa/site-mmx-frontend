@@ -52,9 +52,10 @@ export default function LeadsForm () {
 	}
 
 	return (
-		<section className="bg-white  bg-mmx-leafs bg-contain bg-no-repeat py-12">
-			<h2 className="text-3xl font-bold text-center mb-6">Entre em Contato</h2>
-			<form className="max-w-lg mx-auto" onSubmit={ handleSubmit } >
+		<section className="bg-white bg-mmx-leafs bg-contain bg-no-repeat">
+			<div className="py-10 bg-white lg:bg-transparent bg-opacity-70">
+			<h2 className="text-3xl font-bold text-center mb-10">Receba nossas novidades e descontos de fábrica!</h2>
+			<form className="max-w-lg mx-auto px-20" onSubmit={ handleSubmit } >
 				<div className="mb-4">
 					<label htmlFor="name" className="block text-gray-700 font-medium">Nome</label>
 					<input
@@ -64,7 +65,7 @@ export default function LeadsForm () {
 						name="name"
 						className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
 						required
-					/>
+						/>
 				</div>
 				<div className="mb-4">
 					<label htmlFor="email" className="block text-gray-700 font-medium">E-mail</label>
@@ -85,17 +86,18 @@ export default function LeadsForm () {
 						onChange={ handleInputChange }
 						name="phone"
 						className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
-					/>
+						/>
 				</div>
 				<div className="text-center">
 					<button
 						type="submit"
-						className="bg-lime-600 text-white px-20 py-3 rounded-md font-medium hover:bg-lime-700 transition-colors duration-300">
+						className="bg-lime-600 text-white mt-5 px-20 py-3 rounded-md font-medium hover:bg-lime-700 transition-colors duration-300">
 						Enviar
 					</button>
 				</div>
 			</form>
 			<ToastContainer />
+							</div>
 		</section>
 	)
 };
