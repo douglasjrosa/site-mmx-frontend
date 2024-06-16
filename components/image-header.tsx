@@ -16,7 +16,8 @@ const ImageHeader: React.FC<ImageHeaderProps> = ({ title, image }) => (
 			src={image.src}
 			alt={image.alt}
 			height={image.height}
-			width={image.width}
+			width={ image.width }
+			priority={ true }
 		/>
 	</div>
 )

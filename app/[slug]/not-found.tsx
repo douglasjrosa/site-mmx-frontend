@@ -5,7 +5,7 @@ export default function NotFound() {
 		{
 			title: "Ooops!",
 			image: {
-				url: "/images/site/404.jpg",
+				src: "/images/site/404.jpg",
 				alt: "Caixa de madeira indicando 404 - Página não existe.",
 				width: 1024,
 				height: 1024

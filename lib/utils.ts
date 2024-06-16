@@ -1,6 +1,5 @@
 "use server"
 import { Page } from "@/db/schema";
-import { revalidatePath } from "next/cache";
 
 const baseUrl: string = process.env.NEXT_PUBLIC_BASE_URL ?? "";
 
@@ -13,8 +12,8 @@ export const getPost = async (slug: string): Promise<Page | any> => {
 		const post = await response.json();
 		return post;
 	} catch (error) {
-		console.error('Erro ao fazer a solicitação:', error);
-		return {};
+		console.error('Erro ao fazer a solicitação do Post:', error);
+		return undefined;
 	}
 }
 

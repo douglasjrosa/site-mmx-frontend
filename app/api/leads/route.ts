@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from "@/db"
-import { NewLead, NewPage, Page, leads, pages } from '@/db/schema'
+import { NewLead, leads } from '@/db/schema'
 
 export async function POST (
 	request: NextRequest
