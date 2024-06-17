@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from "@/db";
-import { Global, globals } from '@/db/schema';
+import { Global, globalsTable } from '@/db/schema';
 import { eq } from 'drizzle-orm';
 
 export async function GET(
@@ -8,6 +8,6 @@ export async function GET(
 	{params}: any
 ) {
 	const { prop } = params;
-	const data: Global[] = await db.select().from(globals).where(eq(globals.prop, prop));
+	const data: Global[] = await db.select().from(globalsTable).where(eq(globalsTable.prop, prop));
 	return NextResponse.json( data[0] )
 }

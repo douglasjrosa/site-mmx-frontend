@@ -1,10 +1,5 @@
-import Image, { ImageProps } from "next/image";
-
-
-export interface ImageHeaderProps {
-	title: string;
-	image: ImageProps
-}
+import { ImageHeader as ImageHeaderProps } from "@/db/schema"
+import Image from "next/image";
 
 const ImageHeader: React.FC<ImageHeaderProps> = ({ title, image }) => (
 	<div className="w-screen relative">

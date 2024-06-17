@@ -1,1 +1,0 @@
-ALTER TABLE "pages" ALTER COLUMN "imageHeader" SET DATA TYPE json;

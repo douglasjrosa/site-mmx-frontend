@@ -1,30 +1,32 @@
 {
-  "id": "9c6f1a97-f376-4b7a-a072-a96058d1fdc9",
-  "prevId": "15b9d2f4-4939-4c58-a4ce-947f81359fa6",
-  "version": "5",
-  "dialect": "pg",
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "b904aae2-128d-4715-96c2-8f8bdfa9631a",
+  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "globals": {
-      "name": "globals",
-      "schema": "",
+    "globalsTable": {
+      "name": "globalsTable",
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "text",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "autoincrement": false
         },
         "prop": {
           "name": "prop",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "autoincrement": false
         },
         "value": {
           "name": "value",
-          "type": "jsonb",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "autoincrement": false
         }
       },
       "indexes": {
@@ -40,33 +42,44 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "leads": {
-      "name": "leads",
-      "schema": "",
+    "leadsTable": {
+      "name": "leadsTable",
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "text",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "autoincrement": false
         },
         "name": {
           "name": "name",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "autoincrement": false
         },
         "email": {
           "name": "email",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "autoincrement": false
         },
         "phone": {
           "name": "phone",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP)"
         }
       },
       "indexes": {
@@ -82,65 +95,73 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "pages": {
-      "name": "pages",
-      "schema": "",
+    "pagesTable": {
+      "name": "pagesTable",
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "text",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "autoincrement": false
         },
         "isPage": {
           "name": "isPage",
-          "type": "boolean",
+          "type": "integer",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
+          "autoincrement": false,
           "default": false
         },
         "slug": {
           "name": "slug",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "autoincrement": false
         },
         "title": {
           "name": "title",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true,
+          "autoincrement": false
         },
         "imageHeader": {
           "name": "imageHeader",
-          "type": "json",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "autoincrement": false
         },
         "metadata": {
           "name": "metadata",
-          "type": "jsonb",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "autoincrement": false
         },
         "excerpts": {
           "name": "excerpts",
-          "type": "jsonb",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "autoincrement": false
         },
         "gallery": {
           "name": "gallery",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "autoincrement": false
         },
         "createdAt": {
           "name": "createdAt",
-          "type": "timestamp",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(CURRENT_TIMESTAMP)"
         }
       },
       "indexes": {
@@ -158,10 +179,12 @@
     }
   },
   "enums": {},
-  "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
   }
 }

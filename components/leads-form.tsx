@@ -1,6 +1,5 @@
 "use client"
 import { baseUrl } from "@/data/global"
-import { NextResponse } from "next/server"
 import { ChangeEvent, FormEvent, useState } from "react"
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
@@ -27,7 +26,7 @@ export default function LeadsForm () {
 		const email = eventData.get( "email" )
 		const phone = eventData.get( "phone" )
 
-		const saveLead: Promise<unknown> = fetch( `${ baseUrl }/api/leads`, {
+		const response = await fetch( `${ baseUrl }/api/leads`, {
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -35,6 +34,9 @@ export default function LeadsForm () {
 			body: JSON.stringify( { name, email, phone } )
 		} )
 
+		const saveLead = await response.json()
+
+		if( !response.ok ) console.error( "Erro ao salvar os dados.", { response, saveLead } )
 
 		toast.promise(
 		saveLead,

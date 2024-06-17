@@ -1,13 +1,10 @@
-import Image, { ImageProps } from "next/image";
+import { Excerpt } from "@/db/schema"
+import Image from "next/image";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
 interface FeatureRowsGroupProps {
-	excerpts: {
-		title: string;
-		image: ImageProps;
-		text: string[];
-	}[];
+	excerpts: Excerpt[]
 }
 
 const FeatureRowsGroup: React.FC<FeatureRowsGroupProps> = ({ excerpts }) => {
@@ -20,10 +17,11 @@ const FeatureRowsGroup: React.FC<FeatureRowsGroupProps> = ({ excerpts }) => {
 				const { image, text } = excerpt;
 				reverse = !reverse;
 				reverseClass = reverse ? "md:flex-row" : "md:flex-row-reverse";
+
 				return (
 					<div key={`feature-row-${key}`} className={`bg-white p-4 md:rounded shadow-xl w-full lg:w-5/6 mx-auto my-10 md:flex ${reverseClass} justify-between`}>
 						<div className="md:w-1/2 md:p-5 lg:w-2/5 flex justify-center items-center">
-							<Image className="w-full" src={image.src} alt={image.alt} height={image.height} width={image.width} />
+							<Image className="w-full" src={image.src} alt={image.alt} height={image.height} width={image.width} priority= { !key } />
 						</div>
 						<div className="p-10 md:w-1/2 lg:w-3/5">
 							{key === 0 && <h1 className="text-3xl text-bold">{excerpt.title}</h1>}

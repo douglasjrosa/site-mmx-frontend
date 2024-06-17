@@ -1,27 +1,36 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import path from 'path'
-import fs from 'fs'
+import fs from 'fs/promises'
 import sizeOf from 'image-size'
 
-export interface MessedGalleryProps {
+export const dynamic = 'force-dynamic' // Para garantir renderização no lado do servidor
+
+export interface GalleryProps {
 	gallery: {
 		title: string
 		path: string
 	}
 }
 
-const MessedGallery: React.FC<MessedGalleryProps> = ( { gallery } ) => {
+interface ImageFile {
+	fileName: string
+	width: number
+	height: number
+}
 
-	const imageDirectory = `./public/images/${ gallery.path }`
-	const imageFiles = fs.readdirSync( imageDirectory ).map( ( fileName ) => {
+const Gallery = async ( { gallery }: GalleryProps ) => {
+	const imageDirectory = path.join( process.cwd(), 'public', 'images', gallery.path )
+	const fileNames = await fs.readdir( imageDirectory )
+	const imageFiles: ImageFile[] = await Promise.all( fileNames.map( async ( fileName ) => {
 		const imagePath = path.join( imageDirectory, fileName )
 		const dimensions = sizeOf( imagePath )
 		return {
 			fileName,
-			width: dimensions.width,
-			height: dimensions.height
+			width: dimensions.width!,
+			height: dimensions.height!
 		}
-	} )
+	} ) )
 
 	return (
 		<div className="bg-white">
@@ -43,4 +52,5 @@ const MessedGallery: React.FC<MessedGalleryProps> = ( { gallery } ) => {
 		</div>
 	)
 }
-export default MessedGallery
+
+export default Gallery

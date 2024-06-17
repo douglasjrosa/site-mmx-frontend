@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import MobileMenuButton from "./mobile-menu";
 import LoginButton from "./login-button";
-import classNames from "classnames";
 
 export interface NavbarProps {
 	bgColor: string;
@@ -41,7 +40,8 @@ const Navbar: React.FC<NavbarProps> = ({
 						src={logo.url}
 						width={logo.width}
 						height={logo.height}
-						alt={logo.alt}
+						alt={ logo.alt }
+						priority={ true }
 					/>
 				</Link>
 				<MobileMenuButton

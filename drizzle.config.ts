@@ -1,14 +1,13 @@
-import "dotenv/config";
-import type { Config } from "drizzle-kit";
+import { defineConfig } from "drizzle-kit"
+import path from "path"
 
-export default {
-  schema: "./db/schema.ts",
-  out: "./db/drizzle",
-  driver: "pg",
-  dbCredentials: {
-    host: process.env.POSTGRES_HOST ?? "",
-    user: process.env.POSTGRES_USER ?? "",
-    password: process.env.POSTGRES_PASSWORD ?? "",
-    database: process.env.POSTGRES_DATABASE ?? "",
-  },
-} satisfies Config;
+const dbPath = path.resolve( process.cwd(), "sqlite.db" )
+const schemaPath = path.resolve( process.cwd(), "db/schema.ts" )
+
+export default defineConfig( {
+	dialect: "sqlite",
+	schema: schemaPath,
+	dbCredentials: {
+		url: `file:${ dbPath }`
+	}
+} )
