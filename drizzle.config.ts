@@ -3,6 +3,7 @@ import path from "path"
 
 const dbPath = path.resolve( process.cwd(), "sqlite.db" )
 const schemaPath = path.resolve( process.cwd(), "db/schema.ts" )
+console.log( `Schema path: ${ schemaPath }`)
 
 export default defineConfig( {
 	dialect: "sqlite",
