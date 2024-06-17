@@ -1,0 +1,1 @@
+ALTER TABLE "pages" ALTER COLUMN "gallery" SET DATA TYPE jsonb;

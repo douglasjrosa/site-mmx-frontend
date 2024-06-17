@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getPost, getPosts } from "@/lib/utils"
 import { Suspense } from "react"
+import MessedGallery from "@/components/messed-gallery"
 
 export async function generateStaticParams (): Promise<any> {
 	const posts = await getPosts()
@@ -24,12 +25,13 @@ export default async function Page ( { params }: { params: { slug: string } } ) 
 	const post = await getPost( slug )
 	if ( post === undefined ) notFound()
 
-	const { imageHeader, excerpts } = post
+	const { imageHeader, excerpts, gallery } = post
 	return (
 		<div>
 			<Suspense fallback={ <h1>Carregando...</h1> } >
 				{ !!imageHeader?.title && <ImageHeader image={ imageHeader.image } title={ imageHeader.title } /> }
 				{ !!excerpts.length && <FeatureRowsGroup excerpts={ excerpts } /> }
+				{ !!gallery && <MessedGallery gallery={ gallery } /> }
 			</Suspense>
 		</div>
 	)

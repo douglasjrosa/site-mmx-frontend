@@ -23,6 +23,7 @@ export const pages = pgTable( "pages", {
 	imageHeader: json( "imageHeader" ),
 	metadata: jsonb( "metadata" ),
 	excerpts: jsonb( "excerpts" ),
+	gallery: jsonb( "gallery" ),
 	createdAt: timestamp( 'createdAt' ).defaultNow().notNull(),
 },
 	( pages ) => ( { uniqueIdx: uniqueIndex( "unique_slug" ).on( pages.slug ) } )

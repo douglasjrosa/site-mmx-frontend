@@ -22,6 +22,7 @@ export async function POST(
 				imageHeader: pages.imageHeader,
 				metadata: pages.metadata,
 				excerpts: pages.excerpts,
+				gallery: pages.gallery,
 				createdAt: pages.createdAt
 			}
 		);
@@ -49,6 +50,7 @@ export async function PUT(
 		imageHeader: pages.imageHeader,
 		metadata: pages.metadata,
 		excerpts: pages.excerpts,
+		gallery: pages.gallery,
 		createdAt: pages.createdAt
 	});
 	return NextResponse.json(updatePost[0]);
@@ -66,6 +68,7 @@ export async function DELETE(
 		imageHeader: pages.imageHeader,
 		metadata: pages.metadata,
 		excerpts: pages.excerpts,
+		gallery: pages.gallery,
 		createdAt: pages.createdAt
 	});
 	return NextResponse.json(deletedPost[0]);
