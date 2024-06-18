@@ -36,10 +36,10 @@ export default function LeadsForm () {
 
 		const saveLead = await response.json()
 
-		if( !response.ok ) console.error( "Erro ao salvar os dados.", { response, saveLead } )
+		if ( !response.ok ) console.error( "Erro ao salvar os dados.", { response, saveLead } )
 
 		toast.promise(
-		saveLead,
+			saveLead,
 			{
 				pending: "Enviando dados...",
 				success: "Que legal! Logo logo você receberá novidades.",
@@ -56,50 +56,56 @@ export default function LeadsForm () {
 	return (
 		<section className="bg-white bg-mmx-leafs bg-contain bg-no-repeat">
 			<div className="py-10 bg-white lg:bg-transparent bg-opacity-70">
-			<h2 className="text-3xl font-bold text-center mb-10">Receba nossas novidades e descontos de fábrica!</h2>
-			<form className="max-w-lg mx-auto px-20" onSubmit={ handleSubmit } >
-				<div className="mb-4">
-					<label htmlFor="name" className="block text-gray-700 font-medium">Nome</label>
-					<input
-						type="text"
-						value={ formData.name }
-						onChange={ handleInputChange }
-						name="name"
-						className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
-						required
+				<h2 className="text-3xl font-bold text-center mb-10">Receba nossas novidades e descontos de fábrica!</h2>
+				<form className="max-w-lg mx-auto px-20" onSubmit={ handleSubmit } >
+					<div className="mb-4">
+						<label htmlFor="name" className="block text-gray-700 font-medium">Nome</label>
+						<input
+							type="text"
+							value={ formData.name }
+							onChange={ handleInputChange }
+							name="name"
+							aria-label="Nome"
+							className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
+							placeholder="Maria Bonita"
+							required
+							/>
+					</div>
+					<div className="mb-4">
+						<label htmlFor="email" className="block text-gray-700 font-medium">E-mail</label>
+						<input
+							type="email"
+							value={ formData.email }
+							onChange={ handleInputChange }
+							name="email"
+							aria-label="E-mail"
+							placeholder="maria.bonita@gmail.com"
+							className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
+							required
+							/>
+					</div>
+					<div className="mb-4">
+						<label htmlFor="phone" className="block text-gray-700 font-medium">Fone/Whatsapp (opcional)</label>
+						<input
+							type="text"
+							value={ formData.phone }
+							onChange={ handleInputChange }
+							name="phone"
+							aria-label="Telefone"
+							placeholder="11 99966-9966"
+							className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
 						/>
-				</div>
-				<div className="mb-4">
-					<label htmlFor="email" className="block text-gray-700 font-medium">E-mail</label>
-					<input
-						type="email"
-						value={ formData.email }
-						onChange={ handleInputChange }
-						name="email"
-						className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
-						required
-					/>
-				</div>
-				<div className="mb-4">
-					<label htmlFor="phone" className="block text-gray-700 font-medium">Fone/Whatsapp (opcional)</label>
-					<input
-						type="text"
-						value={ formData.phone }
-						onChange={ handleInputChange }
-						name="phone"
-						className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
-						/>
-				</div>
-				<div className="text-center">
-					<button
-						type="submit"
-						className="bg-lime-600 text-white mt-5 px-20 py-3 rounded-md font-medium hover:bg-lime-700 transition-colors duration-300">
-						Enviar
-					</button>
-				</div>
-			</form>
-			<ToastContainer />
-							</div>
+					</div>
+					<div className="text-center">
+						<button
+							type="submit"
+							className="bg-lime-700 text-white text-xl mt-5 px-20 py-3 rounded-md font-medium hover:bg-lime-800 transition-colors duration-300">
+							Enviar
+						</button>
+					</div>
+				</form>
+				<ToastContainer />
+			</div>
 		</section>
 	)
 };

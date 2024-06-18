@@ -39,6 +39,7 @@ const MobileMenuButton: React.FC<MobileMenuButtonProps> = ({
 	return (
 		<div className="sm:hidden flex flex-row justify-end w-full">
 			<button
+				aria-label="Menu"
 				onClick={() => {
 					setMobileMenuIsShown(!mobileMenuIsShown);
 				}}

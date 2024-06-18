@@ -33,11 +33,11 @@ const FeatureRowsGroup: React.FC<FeatureRowsGroupProps> = ( { excerpts } ) => {
 										a: ( { children, href } ) => {
 											const fixedHref = String( href ).replace( "/=/", ":" )
 											return (
-												<a href={ fixedHref } className="text-blue-500" rel="noopener noreferrer">{ children }</a>
+												<a href={ fixedHref } className="text-blue-800" rel="noopener noreferrer">{ children }</a>
 											)
 										},
 										p: ( { children } ) => (
-											<p className="mb-4" >{ children }</p>
+											<p className="mb-4 text-gray-800" >{ children }</p>
 										)
 									} }
 								>

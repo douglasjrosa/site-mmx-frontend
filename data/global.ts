@@ -90,7 +90,7 @@ export const navbar: NavbarProps = {
 		{ newTab: false, url: "/contato", text: "Contato" },
 	],
 	loginUrl: "https://crm.ribermax.com.br",
-	mobileButtonColor: "rgb(132 204 22)",
+	mobileButtonColor: "rgb(92 150 22)",
 }
 
 export const footer: FooterProps = {
