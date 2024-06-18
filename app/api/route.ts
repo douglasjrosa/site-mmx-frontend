@@ -3,8 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 const posts = [
 	{slug: "home"},
 	{slug: "produtos"},
-	{slug: "contato"},
-	{slug: "madeira-entalhada-com-serenidade-e-elegancia"}
+	{slug: "contato"}
 ];
 
 export async function GET(

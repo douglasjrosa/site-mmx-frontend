@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { db } from "@/db"
-import { Lead, NewLead, leadsTable } from '@/db/schema'
 
 export async function GET (
 	request: NextRequest
-) {
+	) {
+		/*
 	try {
 		const leads: Lead[] = await db.select().from( leadsTable )
 		return NextResponse.json( leads )
@@ -33,4 +32,6 @@ export async function POST (
 		console.error( 'Erro ao fazer a solicitação:', error )
 		return NextResponse.json( { error }, { status: 500 } )
 	}
-}
+	*/
+	return NextResponse.json({})
+} 

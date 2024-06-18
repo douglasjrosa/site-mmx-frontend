@@ -1,4 +1,3 @@
-import { Metadata } from "next"
 import Image from "next/image"
 import path from 'path'
 import fs from 'fs/promises'

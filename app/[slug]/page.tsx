@@ -1,12 +1,12 @@
+
 import FeatureRowsGroup from "@/components/featured-rows-group"
 import ImageHeader from "@/components/image-header"
 import type { Metadata as NextMetadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getPost, getPosts } from "@/lib/utils"
 import { Suspense } from "react"
 import Gallery from "@/components/gallery"
-import { Page as Post } from "@/db/schema"
-
+import { Post } from '@/data/schema'
+import { getPost, getPosts } from "@/lib/utils"
 
 export async function generateStaticParams (): Promise<{ slug: string }[]> {
 	const posts: Post[] = await getPosts()
@@ -24,7 +24,7 @@ export async function generateMetadata ( { params }: { params: { slug: string } 
 const Page: React.FC<{ params: { slug: string } }> = async ( { params } ) => {
 	const { slug } = params
 	const post: Post | undefined = await getPost( slug )
-	
+
 	if ( !post ) notFound()
 
 	const { imageHeader, excerpts, gallery } = post

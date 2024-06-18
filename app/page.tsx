@@ -1,8 +1,8 @@
 import FeatureRowsGroup from "@/components/featured-rows-group"
 import type { Metadata } from "next"
-import { getPost } from "@/lib/utils"
 import { Suspense } from "react"
 import ImageHeader from "@/components/image-header"
+import { home } from "@/data/pages/home"
 
 export const metadata: Metadata = {
 	keywords: [ "Madeira entalhada", "Produtos de madeira" ],
@@ -12,8 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Page () {
-	const post = await getPost( "home" )
-	const { imageHeader, excerpts } = post
+	const { imageHeader, excerpts } = home
 	return (
 		<div>
 			<Suspense fallback={ <h1>Carregando...</h1> } >

@@ -1,0 +1,41 @@
+{
+	"id": "pt47qj074xn3ua2qf2des1g4",
+	"isPage": true,
+	"slug": "nossas-politicas",
+	"title": "Políticas de Cookies e Privacidade",
+	"imageHeader": null,
+	"metadata": {
+		"authors": [
+			{
+				"url": "https://github.com/douglasjrosa",
+				"name": "Douglas José Rosa"
+			}
+		],
+		"creator": "Grupo Max Brasil",
+		"keywords": [
+			"privacidade",
+			"cookies"
+		],
+		"publisher": "TI - Max Brasil"
+	},
+	"excerpts": [
+		{
+			"text": [
+				"Nós utilizamos cookies para garantir a melhor experiência possível em nosso site. Cookies são pequenos arquivos de texto que são armazenados em seu dispositivo quando você visita um site. Eles ajudam a tornar sua experiência de navegação mais eficiente e personalizada.",
+				"Os cookies que utilizamos são principalmente para melhorar o desempenho do site e entender como você interage com ele. Isso inclui informações sobre as páginas que você visita e as ações que você realiza no site.",
+				"Nós não coletamos nenhum dado pessoal identificável através dos cookies. Todas as informações coletadas são agregadas e anônimas, e são utilizadas apenas para análise estatística e melhoria contínua do nosso site.",
+				"Ao continuar a usar nosso site, você concorda com o uso de cookies de acordo com esta política. Se você preferir não permitir o uso de cookies, você pode ajustar as configurações do seu navegador para bloqueá-los. No entanto, isso pode afetar a funcionalidade do site e sua experiência de navegação.",
+				"Se tiver alguma dúvida sobre nossa política de cookies, entre em contato conosco. Agradecemos por visitar nosso site e esperamos que você tenha uma excelente experiência de navegação."
+			],
+			"image": {
+				"alt": "Cookies em uma mesa de café da manhã",
+				"src": "/images/site/cookies.jpg",
+				"width": 810,
+				"height": 810
+			},
+			"title": "Nossas políticas de Cookies e Privacidade"
+		}
+	],
+	"gallery": null,
+	"createdAt": "2024-06-17 15:32:25"
+}

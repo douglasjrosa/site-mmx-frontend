@@ -1,0 +1,38 @@
+{
+	"isPage": true,
+	"slug": "contato",
+	"title": "Contato",
+	"imageHeader": null,
+	"metadata": {
+		"authors": [
+			{
+				"url": "https://github.com/douglasjrosa",
+				"name": "Douglas José Rosa"
+			}
+		],
+		"creator": "Grupo Max Brasil",
+		"keywords": [
+			"Madeira entalhada",
+			"Produtos de madeira"
+		],
+		"publisher": "TI - Max Brasil"
+	},
+	"excerpts": [
+		{
+			"text": [
+				"Ligue agora para **[(16) 98802-9535](tel/=/+5516988029535)** e peça um orçamento.",
+				"Se preferir envie um e-mail no link abaixo:",
+				"[contato.maramax@gmail.com](mailto:contato.maramax@gmail.com)"
+			],
+			"image": {
+				"alt": "Mulher falando ao telefone",
+				"src": "/images/site/executive-calling.jpg",
+				"width": 450,
+				"height": 675
+			},
+			"title": "Entre em contato para pedir um orçamento."
+		}
+	],
+	"gallery": null,
+	"createdAt": "2024-06-17 15:33:49"
+}

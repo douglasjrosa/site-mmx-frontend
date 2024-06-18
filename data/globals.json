@@ -1,0 +1,211 @@
+[
+	{
+		"id": 1,
+		"prop": "siteInfo",
+		"value": {
+			"title": "Maramax",
+			"slogan": "Madeira Entalhada com Serenidade e Elegância",
+			"canonical": "https://maramax.com.br",
+			"themeColor": "#ffe371",
+			"description": "Produtos e projetos especiais em madeira"
+		}
+	},
+	{
+		"id": 2,
+		"prop": "customHeadTags",
+		"value": {
+			"icbm": "-21.137191167625403, -47.78776210888562",
+			"geoRegion": "SP-BR",
+			"geoPosition": "-21.137191167625403; -47.78776210888562",
+			"geoPlacename": "Ribeirão Preto-SP"
+		}
+	},
+	{
+		"id": 3,
+		"prop": "twitter",
+		"value": {
+			"card": "summary_large_image",
+			"creator": "@maramaxbrasil"
+		}
+	},
+	{
+		"id": 4,
+		"prop": "robots",
+		"value": {
+			"index": true,
+			"follow": true,
+			"nocache": false,
+			"googleBot": {
+				"index": true,
+				"follow": true
+			}
+		}
+	},
+	{
+		"id": 5,
+		"prop": "icons",
+		"value": {
+			"icon": "/favicon.ico",
+			"apple": "/pwa/ios/180.png",
+			"shortcut": "/favicon.ico"
+		}
+	},
+	{
+		"id": 6,
+		"prop": "openGraph",
+		"value": {
+			"url": "https://maramax.com.br",
+			"type": "website",
+			"title": "Maramax",
+			"images": [
+				{
+					"alt": "thumbnail",
+					"url": "https://maramax.com.br/images/site/logotipo.png",
+					"width": 213,
+					"height": 156
+				},
+				{
+					"alt": "large",
+					"url": "https://maramax.com.br/images/site/logotipo.png",
+					"width": 1000,
+					"height": 731
+				},
+				{
+					"alt": "medium",
+					"url": "https://maramax.com.br/images/site/logotipo.png",
+					"width": 750,
+					"height": 549
+				},
+				{
+					"alt": "small",
+					"url": "https://maramax.com.br/images/site/logotipo.png",
+					"width": 500,
+					"height": 366
+				}
+			],
+			"locale": "pt_BR",
+			"siteName": "Maramax",
+			"description": "Produtos e projetos especiais em madeira"
+		}
+	},
+	{
+		"id": 7,
+		"prop": "navbar",
+		"value": {
+			"logo": {
+				"alt": "Logomarca Maramax",
+				"url": "/images/site/logotipo.png",
+				"width": 80,
+				"height": 80
+			},
+			"links": [
+				{
+					"url": "/",
+					"text": "Home",
+					"newTab": false
+				},
+				{
+					"url": "/produtos",
+					"text": "Produtos",
+					"newTab": false
+				},
+				{
+					"url": "/novidades",
+					"text": "Novidades",
+					"newTab": false
+				},
+				{
+					"url": "/contato",
+					"text": "Contato",
+					"newTab": false
+				}
+			],
+			"height": "50px",
+			"bgColor": "rgb(253 224 71)",
+			"loginUrl": "https://admin.maramax.com.br",
+			"mobileButtonColor": "rgb(132 204 22)"
+		}
+	},
+	{
+		"id": 8,
+		"prop": "footer",
+		"value": {
+			"logo": {
+				"alt": "Logomarca Maramax",
+				"url": "/images/site/logomarca.png",
+				"width": 771,
+				"height": 324
+			},
+			"columns": [
+				{
+					"links": [
+						{
+							"url": "/",
+							"text": "Home",
+							"newTab": false
+						},
+						{
+							"url": "/produtos",
+							"text": "Produtos",
+							"newTab": false
+						},
+						{
+							"url": "/contato",
+							"text": "Contato",
+							"newTab": false
+						}
+					],
+					"title": "Páginas"
+				},
+				{
+					"links": [
+						{
+							"url": "tel:+5516988027089",
+							"text": "(16) 98802-7089 Douglas (Comercial)",
+							"newTab": false
+						},
+						{
+							"url": "mailto:contato.maramax@gmail.com",
+							"text": "contato.maramax@...",
+							"newTab": false
+						}
+					],
+					"title": "Contatos"
+				},
+				{
+					"title": "Localização",
+					"descriptions": [
+						"Rua Santos, 1624",
+						"Vila Elisa",
+						"Ribeirão Preto SP"
+					]
+				}
+			],
+			"whatsapp": {
+				"image": {
+					"alt": "Botão menu Whatsapp",
+					"url": "/images/site/logotipo_whatsapp_90x90.webp",
+					"width": 90,
+					"height": 90
+				},
+				"message": "Olá, visitei o site da Maramax e gostaria de mais informações...",
+				"contacts": [
+					{
+						"fone": "+5516988027089",
+						"nome": "Douglas (Comercial)"
+					}
+				]
+			},
+			"smallText": "© Copyright Maramax™ (Lei 9610 de 19/02/1998)",
+			"showInitModal": true,
+			"notificationBannerText": "Este site usa Cookies para melhorar a sua experiência de navegação ."
+		}
+	},
+	{
+		"id": 9,
+		"prop": "cookiesBanner",
+		"value": {
+			"text": "Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com a nossa política de cookies. Clique para conhecer nossas [políticas de cookies e privacidade](/nossas-politicas)."
+		}
+	}
+]

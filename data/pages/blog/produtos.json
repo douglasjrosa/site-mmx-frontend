@@ -1,0 +1,44 @@
+{
+	"id": "qmusvokvb2xxm2ma8loyghcx",
+	"isPage": true,
+	"slug": "produtos",
+	"title": "Produtos",
+	"imageHeader": null,
+	"metadata": {
+		"keywords": [
+			"produtos",
+			"peças",
+			"madeira",
+			"decoração"
+		],
+		"authors": [
+			{
+				"name": "Douglas José Rosa",
+				"url": "https://github.com/douglasjrosa"
+			}
+		],
+		"creator": "Grupo Max Brasil",
+		"publisher": "TI - Max Brasil"
+	},
+	"excerpts": [
+		{
+			"title": "Em breve você poderá comprar nossos produtos em nossa loja e nos marketplaces.",
+			"image": {
+				"src": "/images/site/17.png",
+				"alt": "Entregador passando a encomenda em uma caixa para a cliente.",
+				"width": 999,
+				"height": 667
+			},
+			"text": [
+				"Estamos em fase de pré-lançamento dos nossos produtos.",
+				"Não perca a chance de deixar-nos seu contato para que possamos te informar no momento em que iniciarmos nossas vendas.",
+				"Você não pode ficar de fora das nossas ofertas direto da fábrica."
+			]
+		}
+	],
+	"gallery": {
+		"title": "Logo, logo...",
+		"path": "produtos/produtos-gallery"
+	},
+	"createdAt": "2024-06-17 15:31:06"
+}
