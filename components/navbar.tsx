@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({
 					<ul className="flex flex-row">
 						{links.map((link) => (
 							<li key={link.url} className="py-1 px-3">
-								<Link href={link.url} target={link.newTab ? "_blank" : "_self"}>
+								<Link href={link.url} target={link.newTab ? "_blank" : "_self"} className="p-5 rounded hover:bg-lime-800 hover:text-white text-lg text-gray-800" >
 									{link.text}
 								</Link>
 							</li>
