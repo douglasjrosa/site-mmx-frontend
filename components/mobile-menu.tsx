@@ -50,6 +50,7 @@ const MobileMenuButton: React.FC<MobileMenuButtonProps> = ({
 					style={{
 						height: "25px",
 						width: "25px",
+						color: "white"
 					}}
 				/>
 			</button>

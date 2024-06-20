@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function Page () {
 	const { imageHeader, excerpts } = home
 	return (
-		<div>
+		<div className="w-full">
 			<Suspense fallback={ <h1>Carregando...</h1> } >
 				{ !!imageHeader?.title && <ImageHeader image={ imageHeader.image } title={ imageHeader.title } /> }
 				{ !!excerpts.length && <FeatureRowsGroup excerpts={ excerpts } /> }

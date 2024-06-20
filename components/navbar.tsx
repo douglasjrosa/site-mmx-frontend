@@ -30,12 +30,12 @@ const Navbar: React.FC<NavbarProps> = ({
 	mobileButtonColor,
 }) => {
 	return (
-		<nav style={{ paddingBottom: height }}>
+		<nav style={{ paddingBottom: height }} className="relative w-full">
 			<div
-				className="fixed flex flex-row w-full p-2 shadow-lg"
-				style={{ height: height, zIndex: "999999", backgroundColor: bgColor }}
+				className="fixed flex flex-row p-2 shadow-lg"
+				style={ { height: height, zIndex: "999999", backgroundColor: bgColor, left: 0, right: 0 }}
 			>
-				<Link href="/" title="home" className="shadow-lg rounded-full">
+				<Link href="/" title="home" className="shadow-md rounded-full">
 					<Image
 						src={logo.url}
 						width={logo.width}

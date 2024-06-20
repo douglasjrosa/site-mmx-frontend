@@ -1,8 +1,21 @@
 "use client"
 import { baseUrl } from "@/data/global"
 import { ChangeEvent, FormEvent, useState } from "react"
-import { toast, ToastContainer } from 'react-toastify'
-import "react-toastify/dist/ReactToastify.css"
+import { Bounce, toast, ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+
+const cleanPhone = ( phone: string ) => phone.replace( /\D/g, '' )
+
+const formatPhone = ( phone: string ) => {
+	const cleaned = cleanPhone( phone )
+
+	const areaCode = cleaned.substring( 0, 2 )
+	const part1 = cleaned.substring( 2, 3 )
+	const part2 = cleaned.substring( 3, 7 )
+	const part3 = cleaned.substring( 7 )
+
+	return `(${ areaCode }) ${ part1 } ${ part2 }-${ part3 }`
+}
 
 export default function LeadsForm () {
 
@@ -12,9 +25,13 @@ export default function LeadsForm () {
 		phone: '',
 	} )
 
+
+
 	const handleInputChange = ( event: ChangeEvent<HTMLInputElement> ) => {
 		const name = event.target.name
-		const value = event.target.value
+		let value = event.target.value
+
+		if ( name == "phone" ) value = formatPhone( value )
 
 		setFormData( ( prevData ) => ( { ...prevData, [ name ]: value } ) )
 	}
@@ -24,28 +41,32 @@ export default function LeadsForm () {
 		const eventData = new FormData( event.currentTarget )
 		const name = eventData.get( "name" )
 		const email = eventData.get( "email" )
-		const phone = eventData.get( "phone" )
+		const phone = cleanPhone( eventData.get( "phone" ) as string )
+
+
 
 		const response = await fetch( `${ baseUrl }/api/leads`, {
-			headers: {
-				"Content-Type": "application/json",
-			},
-			method: "POST",
+			method: 'POST',
 			body: JSON.stringify( { name, email, phone } )
 		} )
 
 		const saveLead = await response.json()
+		console.log( { saveLead } )
 
 		if ( !response.ok ) console.error( "Erro ao salvar os dados.", { response, saveLead } )
 
-		toast.promise(
-			saveLead,
-			{
-				pending: "Enviando dados...",
-				success: "Que legal! Logo logo você receberá novidades.",
-				error: "Oooops... Algo não deu certo.",
-			}, { className: "text-xl p-10 shadow-xl border border-gray-600 mt-20" }
-		)
+		toast.success( 'Tudo certo! Obrigado pelo carinho.', {
+			position: "bottom-center",
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "colored",
+			transition: Bounce,
+		} )
+
 		setFormData( {
 			name: '',
 			email: '',
@@ -54,10 +75,10 @@ export default function LeadsForm () {
 	}
 
 	return (
-		<section className="bg-white bg-mmx-leafs bg-contain bg-no-repeat">
+		<section className="bg-white bg-mmx-leafs bg-contain bg-no-repeat w-full">
 			<div className="py-10 bg-white lg:bg-transparent bg-opacity-70">
 				<h2 className="text-3xl font-bold text-center mb-10">Receba nossas novidades e descontos de fábrica!</h2>
-				<form className="max-w-lg mx-auto px-20" onSubmit={ handleSubmit } >
+				<form className="max-w-lg mx-auto p-7 md:px-20" onSubmit={ handleSubmit } >
 					<div className="mb-4">
 						<label htmlFor="name" className="block text-gray-700 font-medium">Nome</label>
 						<input
@@ -69,7 +90,7 @@ export default function LeadsForm () {
 							className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
 							placeholder="Maria Bonita"
 							required
-							/>
+						/>
 					</div>
 					<div className="mb-4">
 						<label htmlFor="email" className="block text-gray-700 font-medium">E-mail</label>
@@ -82,7 +103,7 @@ export default function LeadsForm () {
 							placeholder="maria.bonita@gmail.com"
 							className="w-full border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-lime-500"
 							required
-							/>
+						/>
 					</div>
 					<div className="mb-4">
 						<label htmlFor="phone" className="block text-gray-700 font-medium">Fone/Whatsapp (opcional)</label>
@@ -99,7 +120,7 @@ export default function LeadsForm () {
 					<div className="text-center">
 						<button
 							type="submit"
-							className="bg-lime-700 text-white text-xl mt-5 px-20 py-3 rounded-md font-medium hover:bg-lime-800 transition-colors duration-300">
+							className="bg-lime-700 text-white text-xl mt-5 w-full py-3 rounded-md font-medium hover:bg-lime-800 transition-colors duration-300">
 							Enviar
 						</button>
 					</div>
